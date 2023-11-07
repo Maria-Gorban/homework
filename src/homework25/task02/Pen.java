@@ -7,7 +7,7 @@ public class Pen {
 
     char[] symbols = text.toCharArray();
     if (tintAmount >= symbols.length) {
-      System.out.println("Вы ввели следующий текст: \n" + text + "\n");
+      System.out.println(text);
 
     }else {
       System.out.println(" ");
