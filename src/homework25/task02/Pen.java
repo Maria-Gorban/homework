@@ -5,19 +5,21 @@ import java.util.Scanner;
 public class Pen {
   int tintAmount = 1000;
 
-  public int write(String text) {
+  public void write(String text) {
 
     char[] symbols = text.toCharArray();
     if (tintAmount >= symbols.length) {
       System.out.println("Вы ввели следующий текст: \n" + text + "\n");
-      tintAmount -= symbols.length;
+
+    }else {
+      System.out.println(" ");
     }
-    return tintAmount;
+    tintAmount -= symbols.length;
   }
 
-    public int refill(){
+    public void refill(){
       tintAmount = 1000;
-      return tintAmount;
+      //return tintAmount;
     }
 
     public void checkInk(){
