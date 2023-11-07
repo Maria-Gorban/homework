@@ -1,7 +1,5 @@
 package homework25.task02;
 
-import java.util.Scanner;
-
 public class Pen {
   int tintAmount = 1000;
 
@@ -19,8 +17,7 @@ public class Pen {
 
     public void refill(){
       tintAmount = 1000;
-      //return tintAmount;
-    }
+      }
 
     public void checkInk(){
       System.out.println("Количество чернил в ручке: " + tintAmount);
