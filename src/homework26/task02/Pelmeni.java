@@ -24,12 +24,12 @@ public class Pelmeni {
     Random random = new Random();
     this.type = type;
     this.filling = filling;
-    this.amount = 1 + random.nextInt(100-1);
+    this.amount = 1 + random.nextInt(100 - 1);
     this.isReadyToEat = isReadyToEat;
 
   }
 
-  public void printInfo(String type, String filling, int amount){
+  public void printInfo(String type, String filling, int amount) {
     System.out.println("Сегодня мы будем есть " + type + " " + filling + ", " + amount + " штук.");
   }
 
@@ -39,25 +39,20 @@ public class Pelmeni {
       Random random = new Random();
       int min = 1 + random.nextInt(25 - 1);
 
-      if(type.equals("хинкали")){
-        if(min < 10){
+      if (type.equals("хинкали")) {
+        if (min < 10) {
           System.out.println(type + " не доварены");
-        }
-        else if(min > 20){
+        } else if (min > 20) {
           System.out.println(type + " переварены");
-        }
-        else{
+        } else {
           System.out.println("Приятного аппетита!");
         }
-      }
-      else {
-        if(min < 5){
+      } else {
+        if (min < 5) {
           System.out.println(type + " не доварены");
-        }
-        else if(min > 10){
+        } else if (min > 10) {
           System.out.println(type + " переварены");
-        }
-        else{
+        } else {
           System.out.println("Приятного аппетита!");
         }
       }
