@@ -68,15 +68,14 @@ public class MyArray {
     array = newArray;
   }
 
-
-
+////////////////////////////////////////////////////////////////////
 
   public boolean contains(double val){ //возвращает true если значение val есть в этом массиве, false в противном случае
     if(indexOf(val) == -1){
       return false;
     }
     return true;
-  }
+  }// return indexOf(val) != -1; весь метод в одну строку
 
   public boolean isEmpty(){ //возвращает true если массив пустой
     for (int i = 0; i < array.length; i++) {
@@ -85,14 +84,14 @@ public class MyArray {
       }
     }
     return true;
-  }
+  }//return array.length == 0; весь метод в одну строку
 
   public void add(double val){ // добавляет элемент со значением val в конец
     double[] newArr = new double[array.length + 1];
     copy(array, newArr);
     newArr[newArr.length - 1] = val;
     array = newArr;
-  }
+  }//add(array.length, val); весь метод в одну строку
 
  public void removeLast(){ //удаляет последний элемент
     remove(array.length - 1);
@@ -105,7 +104,6 @@ public class MyArray {
  public void removeAll(double val){ //удаляет все значение в массиве равные val
    for (int i = 0; i < array.length; i++) {
      remove(indexOf(val));
-
    }
  }
 
