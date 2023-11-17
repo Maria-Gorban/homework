@@ -17,8 +17,9 @@ public class TrafficLight {
   }
 
   public boolean canCrossTheRoad() {
-    System.out.println("можно переходить дорогу?");
+    System.out.println("Сейчас горит " + currentColor + ". Безопасно переходить дорогу?");
     return currentColor == LightColors.GREEN;
+
   }
 }
 
