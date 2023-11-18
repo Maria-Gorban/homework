@@ -8,7 +8,8 @@ public class Main02 {
     short c = 128;
     char d = 'P';
 
-    System.out.println(a*(b-d)+c*a/d);
+    float result = (float)(a*(b-d)+c*a/d);
+    System.out.println(result);
   }
 
 }
