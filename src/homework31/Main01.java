@@ -14,7 +14,7 @@ public class Main01 {
     int a = 0;
     double b = 0;
     short c = 0;
-    byte d = 0;
+    float d = 0;
 
     while (i < 4) {
       System.out.print("Введите какое то число: ");
@@ -30,12 +30,12 @@ public class Main01 {
           c = scanner.nextShort();
           break;
         case 4:
-          d = scanner.nextByte();
+          d = scanner.nextFloat();
           break;
       }
 
     }
-    float result = (float) (a * (b - d) + c * a / d);
+    double result = (double)(a * (b - d) + c * a / d);
     System.out.println(a + " * (" + b + " - " + d + ") + "+ c + " * " + a + " / " + d + " = " + result);
 
   }
