@@ -35,7 +35,7 @@ public class Main01 {
       }
 
     }
-    double result = (double)(a * (b - d) + c * a / d);
+    double result = (a * (b - d) + c * a / d);
     System.out.println(a + " * (" + b + " - " + d + ") + "+ c + " * " + a + " / " + d + " = " + result);
 
   }
