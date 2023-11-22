@@ -17,12 +17,12 @@ public class Main02 {
 
       switch (answer) {
         case 1:
-          a = 1 + random.nextInt(7 - 1);
+          a = 1 + random.nextInt(6 + 1);
           System.out.println("Вы выкинули: " + a);
           break;
         case 2:
-          a = 1 + random.nextInt(7 - 1);
-          b = 1 + random.nextInt(7 - 1);
+          a = 1 + random.nextInt(6 + 1);
+          b = 1 + random.nextInt(6 + 1);
           System.out.println("Вы выкинули: " + a + " и " + b);
           break;
         default:
