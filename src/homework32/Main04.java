@@ -13,8 +13,12 @@ public class Main04 {
     System.out.println("Введите элементы массива: ");
     for (int i = 0; i < arr.length; i++) {
       arr[i] = scanner.nextInt();
-
     }
+
+    for (int i = 0; i < arr.length; i++) {
+      System.out.print(arr[i] + " ");
+    }
+    System.out.println();
     boolean isSorted = true;
     for (int i = arr.length - 1; i > 0; i--) {
       if (arr[i] < arr[i - 1]) {
@@ -30,4 +34,14 @@ public class Main04 {
   }
 }
 
+/*
+можно не создавать переменную isSorted, альтернатива выглядит так:
+for(int i = 0; i < arr.length; i++){
+if(arr[i] < arr[i - 1]){
+System.out.println("Массив не отсортирован");
+return;
+}
+}
+System.out.println("Массив отсортирован");
 
+ */
