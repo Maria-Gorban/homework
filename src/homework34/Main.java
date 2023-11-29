@@ -71,7 +71,6 @@ public class Main {
     do {
       n = scanner.nextInt();
       printTyp(n);
-      } while (n <= 0);
-    }
-
+    } while (n <= 0);
+  }
 }
