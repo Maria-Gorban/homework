@@ -13,34 +13,21 @@ public class Main {
 
   public static void printTyp(int n) {
     switch (n) {
+      case 0:
       case 1:
-        System.out.println(Planets.MERCURY.getName()
-            + ", планета земного типа, самая близкая к Солнцу, необитаема");
+      case 3:
+        System.out.println(", планета земного типа, необитаема");
         break;
       case 2:
-        System.out.println(Planets.VENUS.getName() + ", планета земного типа, необитаема");
-        break;
-      case 3:
-        System.out.println(Planets.EARTH.getName() + ", планета земного типа, обитаема");
+        System.out.println(", планета земного типа, обитаема");
         break;
       case 4:
-        System.out.println(Planets.MARS.getName() + ", планета земного типа, необитаема");
-        break;
       case 5:
-        System.out.println(Planets.JUPITER.getName() + ", газовый гигант, необитаема");
+        System.out.println(", газовый гигант, необитаема");
         break;
       case 6:
-        System.out.println(Planets.SATURN.getName() + ", газовый гигант, необитаема");
-        break;
       case 7:
-        System.out.println(Planets.URANUS.getName() + ", ледяной гигант, необитаема");
-        break;
-      case 8:
-        System.out.println(Planets.NEPTUNE.getName()
-            + ", самая дальняя планета от Солнца, ледяной гигант, необитаема");
-        break;
-      default:
-        System.out.println("некорректный ввод");
+        System.out.println(", ледяной гигант, необитаема");
         break;
     }
   }
@@ -48,13 +35,18 @@ public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Выберите планету: ");
-    System.out.println(
-        "1-меркурий \n2-венера \n3-земля \n4-марс \n5-юпитер \n6-сатурн \n7-уран \n8-нептун");
-    int n;
-    do {
-      n = scanner.nextInt();
-      printTyp(n);
-    } while (n <= 0 || n > 8);
-    printInfo(Planets.getByNumber(n));
+    Planets[] planets = Planets.values();
+    for (int i = 0; i < planets.length; i++) {
+      System.out.println((i + 1) + ". " + planets[i]);
+    }
+    int n = scanner.nextInt() - 1;
+    while (n <= -1 || n >= 8) {
+      System.out.println("некорректный ввод");
+      n = scanner.nextInt() - 1;
+    }
+    System.out.print(planets[n].getName());
+    printTyp(n);
+    printInfo(planets[n]);
+
   }
 }
