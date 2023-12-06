@@ -20,7 +20,6 @@ public class Main {
     while (true) {
       System.out.println("Press f-forward or b-backward or stop");
       String answer = scanner.nextLine();
-      int channel;
       switch (answer) {
         case "f":
           if (television.getCurrentChannel() == television.getMaxChannel()) {
@@ -40,8 +39,7 @@ public class Main {
           break;
         case "stop":
           System.out.println("Enter channel number: ");
-          channel = television.getCurrentChannel();
-          System.out.println("Current channel: " + controller.changeChannel(television, channel));
+          System.out.println("Current channel: " + controller.changeChannel(television));
           break;
       }
     }

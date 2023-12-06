@@ -48,7 +48,7 @@ public class RemoteController {
     }
   }
 
-  public int changeChannel(TV television, int currentChannel) {
+  public int changeChannel(TV television) {
     Scanner scanner = new Scanner(System.in);
     int channel = scanner.nextInt();
 
