@@ -18,7 +18,6 @@ public enum Planets {
 
 
    Planets(String name, int radius, double weight) {
-
     this.name = name;
     this.radius = radius;
     this.weight = weight;
