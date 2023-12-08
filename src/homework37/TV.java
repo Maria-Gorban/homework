@@ -7,9 +7,9 @@ public class TV {
   private final int maxChannel = 100;
 
 
-  public TV(int currentChannel) {
+  public TV(int currentChannel, int frequency) {
     this.currentChannel = currentChannel;
-    frequency = 470;
+    this.frequency = frequency ;
   }
 
   public int getMaxChannel() {
