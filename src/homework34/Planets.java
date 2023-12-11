@@ -17,7 +17,7 @@ public enum Planets {
   private static final double GRAVITATIONAL_CONSTANT = 6.6743e-11;
 
 
-  Planets(String name, int radius, double weight) {
+   Planets(String name, int radius, double weight) {
     this.name = name;
     this.radius = radius;
     this.weight = weight;

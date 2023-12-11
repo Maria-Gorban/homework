@@ -47,6 +47,5 @@ public class Main {
     System.out.print(planets[n].getName());
     printTyp(n);
     printInfo(planets[n]);
-
   }
 }
