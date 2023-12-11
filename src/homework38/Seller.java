@@ -1,7 +1,6 @@
 package homework38;
 
 
-
 public class Seller extends Person {
 
   private Product[] products;
@@ -19,42 +18,44 @@ public class Seller extends Person {
     products[7] = new Product("хлеб", 1000, 3.05);
     products[8] = new Product("печенье", 52000, 14.68);
     products[9] = new Product("спагетти", 34567, 8.48);
+  }
 
-
+  @Override
+  public void greeting() {
+    System.out.print("Приветствую! Меня зовут " + getName() + ".");
+    System.out.print("Я Ваш продавец.");
   }
 
   public double getPrice(String productName, int amount) {
-    boolean productFound = false;
     double price = 0;
     for (int i = 0; i < products.length; i++) {
       if (products[i].getName().equals(productName) && products[i].takeAmount(amount)) {
         price = products[i].getPrice() * amount;
-        productFound = true;
         break;
       }
-    }
-    if (!productFound){
+      if (!products[i].takeAmount(amount)) {
         System.out.println("У нас нет такого продукта");
         return -1;
       }
-
+    }
     return price;
   }
 
   public void saleProduct(String productName, int amount) {
     for (int i = 0; i < products.length; i++) {
       if (products[i].getName().equals(productName)) {
-          products[i].setQuantity(products[i].getQuantity() - amount);
-          System.out.println(products[i].getQuantity());
-          break;
-        }
+        int quantity = products[i].getQuantity();
+        products[i].setQuantity(quantity - amount);
+        System.out.println(products[i].getQuantity());
+        break;
       }
     }
+  }
 
 
-  public void printProducts(){
+  public void printProducts() {
     for (int i = 0; i < products.length; i++) {
-      System.out.println(products[i].getName() + ", "+products[i].getPrice()+"€ за 1 кг");
-       }
+      System.out.println(products[i].getName() + ", " + products[i].getPrice() + "€ за 1 кг");
+    }
   }
-  }
+}

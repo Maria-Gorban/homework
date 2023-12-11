@@ -16,8 +16,8 @@ public class Person {
     this.name = name;
   }
 
-  public void greeting(Person person) {
-    System.out.print("Приветствую! Меня зовут " + person.getName() + ".");
+  public void greeting() {
+    System.out.print("Приветствую! Меня зовут " + getName() + ".");
 
   }
 
