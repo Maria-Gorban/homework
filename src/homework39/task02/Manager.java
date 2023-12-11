@@ -1,16 +1,18 @@
 package homework39.task02;
 
-public class Manager extends Employee{
+public class Manager extends Employee {
 
-  public Manager(String name, double salary){
+  public Manager(String name, double salary) {
     super(name, salary, "manager");
   }
 
-  public void forceToWork(){
+
+  public void forceToWork() {
     System.out.println("А НУ БЫСТРО ВСЕМ РАБОТАТЬ!");
   }
+
   @Override
-  public String toString(){
+  public String toString() {
     return super.toString();
   }
 

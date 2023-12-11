@@ -28,12 +28,12 @@ public class Employee extends Object {
     this.salary = salary;
   }
 
-  public String getPosition(){
+  public String getPosition() {
     return position;
   }
 
   @Override
-  public String toString(){
+  public String toString() {
     return "имя: " + this.name + "\nзарплата: " + this.salary + "€\nдолжность: " + this.position;
   }
 }
