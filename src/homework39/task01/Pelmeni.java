@@ -1,7 +1,7 @@
 package homework39.task01;
 
 
-public class Pelmeni {
+public class Pelmeni extends Object {
 
   String type; // пельмени, хинкали, манты, равиоли, дюшбары...
   String filling; // с мясом, с картошкой, с сыром, с вареньем, с творогом...
