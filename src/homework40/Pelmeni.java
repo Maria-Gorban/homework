@@ -3,9 +3,7 @@ package homework40;
 import java.util.Objects;
 
 public class Pelmeni {
-  /*
-  Описать для него метод equals и hashCode.
-   */
+
 
   String type;
   String filling;
@@ -25,7 +23,7 @@ public class Pelmeni {
   }
 
   @Override
-  public int hashCode(){
+  public int hashCode() {
     return Objects.hash(type, filling, amount, isReadyToEat);
   }
 
