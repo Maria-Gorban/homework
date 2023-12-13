@@ -15,12 +15,14 @@ public class Main {
 
     System.out.print("\nВведите название товара: ");
     String productName = scanner.nextLine();
-    System.out.print("Введите количество в кг: ");
+    System.out.print("Введите количество: ");
     int amount = scanner.nextInt();
     scanner.nextLine();
 
     customer.buyProduct(seller, productName, amount);
-    customer.getMoney(seller.getPrice(productName, amount));
+    double price = seller.getPrice(productName, amount);
+
+    customer.getMoney(price);
     System.out.println("Спасибо! Хорошего дня.");
 
     System.out.print("Продукта '" + productName + "' осталось на складе: ");

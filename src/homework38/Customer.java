@@ -8,7 +8,6 @@ public class Customer extends Person {
     super(name);
     this.money = money;
   }
-
   public double getMoney() {
     return money;
   }
@@ -18,6 +17,7 @@ public class Customer extends Person {
   }
 
   public void buyProduct(Seller seller, String productName, int amount) {
+    System.out.println("Ваш баланс: " + money + "€");
     double price = seller.getPrice(productName, amount);
     if(price == -1){
       return;
@@ -26,8 +26,6 @@ public class Customer extends Person {
     if(!success){
       return;
     }
-    System.out.println("Ваш баланс: " + money + "€");
-    System.out.println("Цена товара: " + String.format("%.3f", price) + "€");
   }
 
   public boolean getMoney(double price) {

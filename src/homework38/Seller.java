@@ -37,6 +37,7 @@ public Product getProduct(int index){
     for (int i = 0; i < products.length; i++) {
       if (products[i].getName().equals(productName) && products[i].takeAmount(amount)) {
         price = products[i].getPrice() * amount;
+        System.out.println("Цена товара: " + String.format("%.3f", price) + "€");
         break;
       }
       if (!products[i].takeAmount(amount)) {
@@ -51,14 +52,12 @@ public Product getProduct(int index){
     for (int i = 0; i < products.length; i++) {
       if (products[i].getName().equals(productName)) {
        products[i].takeAmount(amount);
+        System.out.println(products[i].getQuantity());
+        break;
       }
     }
   }
-  /*int quantity = products[i].getQuantity();
-  products[i].setQuantity(quantity - amount);
-        System.out.println(products[i].getQuantity());
-        break;
-*/
+
   public void printProducts() {
     for (int i = 0; i < products.length; i++) {
       System.out.println(products[i].getName() + ", " + products[i].getPrice() + "€ за 1 кг");
