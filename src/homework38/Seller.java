@@ -19,7 +19,13 @@ public class Seller extends Person {
     products[8] = new Product("печенье", 52000, 14.68);
     products[9] = new Product("спагетти", 34567, 8.48);
   }
+public void setProduct(int index, Product product){
+    products[index] = product;
+}
 
+public Product getProduct(int index){
+    return products[index];
+}
   @Override
   public void greeting() {
     System.out.print("Приветствую! Меня зовут " + getName() + ".");
@@ -44,15 +50,15 @@ public class Seller extends Person {
   public void saleProduct(String productName, int amount) {
     for (int i = 0; i < products.length; i++) {
       if (products[i].getName().equals(productName)) {
-        int quantity = products[i].getQuantity();
-        products[i].setQuantity(quantity - amount);
-        System.out.println(products[i].getQuantity());
-        break;
+       products[i].takeAmount(amount);
       }
     }
   }
-
-
+  /*int quantity = products[i].getQuantity();
+  products[i].setQuantity(quantity - amount);
+        System.out.println(products[i].getQuantity());
+        break;
+*/
   public void printProducts() {
     for (int i = 0; i < products.length; i++) {
       System.out.println(products[i].getName() + ", " + products[i].getPrice() + "€ за 1 кг");

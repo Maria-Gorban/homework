@@ -9,8 +9,23 @@ public class Customer extends Person {
     this.money = money;
   }
 
+  public double getMoney() {
+    return money;
+  }
+
+  public void setMoney(double money) {
+    this.money = money;
+  }
+
   public void buyProduct(Seller seller, String productName, int amount) {
     double price = seller.getPrice(productName, amount);
+    if(price == -1){
+      return;
+    }
+    boolean success = getMoney(price);
+    if(!success){
+      return;
+    }
     System.out.println("Ваш баланс: " + money + "€");
     System.out.println("Цена товара: " + String.format("%.3f", price) + "€");
   }
