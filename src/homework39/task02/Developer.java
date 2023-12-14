@@ -7,13 +7,15 @@ public class Developer extends Employee {
   }
 
   public void workJob() {
-    System.out.println("*звуки усердной работы*");
+    System.out.println("Developer " + name + " усердно работает");
   }
 
+  /*
   @Override
-  public String toString() {
+ public String toString() {
     return super.toString();
   }
-
+  у нас в Employee уже есть этот метод, мы его просто наследуем
+  */
 
 }

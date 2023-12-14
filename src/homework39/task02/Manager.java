@@ -11,9 +11,11 @@ public class Manager extends Employee {
     System.out.println("А НУ БЫСТРО ВСЕМ РАБОТАТЬ!");
   }
 
+  /*
   @Override
   public String toString() {
     return super.toString();
   }
-
+  тоже самое, уже есть в Employee
+   */
 }

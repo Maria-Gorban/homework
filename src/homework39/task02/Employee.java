@@ -2,9 +2,9 @@ package homework39.task02;
 
 public class Employee extends Object {
 
-  private String name;
-  private double salary;
-  private final String position;
+  protected String name;
+  protected double salary;
+  protected final String position;
 
   public Employee(String name, double salary, String position) {
     this.name = name;
