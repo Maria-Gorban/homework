@@ -19,26 +19,27 @@ public class Customer extends Person {
   public void buyProduct(Seller seller, String productName, int amount) {
     System.out.println("Ваш баланс: " + money + "€");
     double price = seller.getPrice(productName, amount);
-    if(price == -1){
+    if(price == 0){
       return;
     }
     boolean success = getMoney(price);
     if(!success){
       return;
     }
+    seller.saleProduct(productName, amount);
   }
 
   public boolean getMoney(double price) {
     if (money < price) {
       System.out.println("Недостаточно средств");
       return false;
-    } else {
+    }
       money -= price;
       System.out.println(
           "Оплата прошла успешно. Ваш баланс: " + String.format("%.3f", money) + "€");
       return true;
     }
   }
-}
+
 
 

@@ -20,13 +20,7 @@ public class Main {
     scanner.nextLine();
 
     customer.buyProduct(seller, productName, amount);
-    double price = seller.getPrice(productName, amount);
-
-    customer.getMoney(price);
-    System.out.println("Спасибо! Хорошего дня.");
-
-    System.out.print("Продукта '" + productName + "' осталось на складе: ");
-    seller.saleProduct(productName, amount);
+    System.out.println("\nСпасибо! Хорошего дня.");
   }
 }
 

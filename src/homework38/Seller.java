@@ -19,13 +19,15 @@ public class Seller extends Person {
     products[8] = new Product("печенье", 52000, 14.68);
     products[9] = new Product("спагетти", 34567, 8.48);
   }
-public void setProduct(int index, Product product){
-    products[index] = product;
-}
 
-public Product getProduct(int index){
+  public void setProduct(int index, Product product) {
+    products[index] = product;
+  }
+
+  public Product getProduct(int index) {
     return products[index];
-}
+  }
+
   @Override
   public void greeting() {
     System.out.print("Приветствую! Меня зовут " + getName() + ".");
@@ -35,25 +37,26 @@ public Product getProduct(int index){
   public double getPrice(String productName, int amount) {
     double price = 0;
     for (int i = 0; i < products.length; i++) {
-      if (products[i].getName().equals(productName) && products[i].takeAmount(amount)) {
-        price = products[i].getPrice() * amount;
-        System.out.println("Цена товара: " + String.format("%.3f", price) + "€");
+      if (products[i].getName().equals(productName)) {
+        if (products[i].getQuantity() >= amount) {
+          price = products[i].getPrice() * amount;
+          System.out.println("Цена товара: " + String.format("%.3f", price) + "€");
+          return price;
+        }
         break;
       }
-      if (!products[i].takeAmount(amount)) {
-        System.out.println("У нас нет такого продукта");
-        return -1;
-      }
     }
-    return price;
+    System.out.println("У нас нет такого продукта");
+    return -1;
   }
+
 
   public void saleProduct(String productName, int amount) {
     for (int i = 0; i < products.length; i++) {
       if (products[i].getName().equals(productName)) {
-       products[i].takeAmount(amount);
-        System.out.println(products[i].getQuantity());
-        break;
+        products[i].takeAmount(amount);
+        System.out.print(
+            "Продукта '" + productName + "' осталось на складе: " + products[i].getQuantity());
       }
     }
   }
