@@ -1,4 +1,4 @@
-package homework44.task01;
+package homework44.task02;
 
 import java.util.Scanner;
 
@@ -6,6 +6,7 @@ public class Main {
 
   public static void countPrice(int answer) {
     Scanner scanner = new Scanner(System.in);
+    double price;
     Shape shape = null;
     switch (answer) {
       case 1:
@@ -22,7 +23,7 @@ public class Main {
         break;
     }
     System.out.print("Введите цену за метр забора: ");
-    double price = scanner.nextDouble();
+    price = scanner.nextDouble();
     System.out.println("Цена за весь забор: " + shape.getPerimeter() * price + "€");
   }
 
