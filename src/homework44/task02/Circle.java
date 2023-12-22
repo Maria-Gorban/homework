@@ -24,8 +24,13 @@ public class Circle extends Shape {
 
   @Override
   public String toString() {
-    return "Circle{" +
-        "radius=" + radius +
+    return "Участок 'Circle'{" +
+        "размер =" + radius +
         '}';
+  }
+
+  @Override
+  public void resize(double coefficient) {
+    setRadius(radius * coefficient);
   }
 }

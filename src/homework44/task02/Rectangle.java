@@ -34,9 +34,17 @@ public class Rectangle extends Shape {
 
   @Override
   public String toString() {
-    return "Rectangle{" +
-        "length=" + length +
-        ", height=" + height +
+    return "участок 'Rectangle'{" +
+        "длина большей стороны =" + length +
+        ", длина меньшей стороны =" + height +
         '}';
   }
+
+  @Override
+  public void resize(double coefficient) {
+   setLength(length * coefficient);
+   setHeight(height * coefficient);
+  }
+
+
 }

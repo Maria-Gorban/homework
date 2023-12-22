@@ -34,9 +34,14 @@ public class Polygon extends Shape {
 
   @Override
   public String toString() {
-    return "Polygon{" +
-        "amount of sides=" + sidesAmount +
-        ", length=" + length +
+    return "участок 'Polygon'{" +
+        "количество сторон =" + sidesAmount +
+        ", длина одной стороны =" + length +
         '}';
+  }
+
+  @Override
+  public void resize(double coefficient) {
+    setLength(length * coefficient);
   }
 }

@@ -1,6 +1,8 @@
 package homework44.task02;
 
-public abstract class Shape {
+import homework44.task01.Rectangle;
+
+public abstract class Shape implements Resizable {
 
   protected String name;
 
@@ -17,4 +19,7 @@ public abstract class Shape {
   }
 
   public abstract double getPerimeter();
+
+
+
 }

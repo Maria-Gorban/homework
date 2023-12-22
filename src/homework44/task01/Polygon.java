@@ -34,7 +34,7 @@ public class Polygon extends Shape {
 
   @Override
   public String toString() {
-    return "Polygon{" +
+    return "Участок 'Polygon' { " +
         "amount of sides=" + sidesAmount +
         ", length=" + length +
         '}';

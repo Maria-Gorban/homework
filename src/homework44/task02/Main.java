@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Main {
 
-  public static void countPrice(int answer) {
+  public static Shape createObject(int answer) {
     Scanner scanner = new Scanner(System.in);
-    double price;
     Shape shape = null;
+
     switch (answer) {
       case 1:
         System.out.println("Введите длину большей и меньшей стороны Вашего участка в метрах: ");
@@ -22,9 +22,8 @@ public class Main {
         shape = new Polygon(scanner.nextInt(), scanner.nextDouble());
         break;
     }
-    System.out.print("Введите цену за метр забора: ");
-    price = scanner.nextDouble();
-    System.out.println("Цена за весь забор: " + shape.getPerimeter() * price + "€");
+    return shape;
+
   }
 
   public static void main(String[] args) {
@@ -35,8 +34,23 @@ public class Main {
     int answer;
     do {
       answer = scanner.nextInt();
+      scanner.nextLine();
     } while (answer <= 0 || answer >= 4);
 
-    countPrice(answer);
+    System.out.print("Введите цену за метр забора: ");
+    double price = scanner.nextDouble();
+    Shape shape = createObject(answer);
+    System.out.println("Цена за весь забор: " + shape.getPerimeter() * price + "€");
+    System.out.println(shape);
+
+    System.out.println("Хотите изменить введенные данные? y/n");
+    String ans = scanner.nextLine();
+    if (ans.equals("n")) {
+      return;
+    }
+    System.out.print("Введите коэффициент, на который хотите увеличить размер Вашего участка: ");
+    shape.resize(scanner.nextDouble());
+    System.out.println("Цена за весь забор: " + shape.getPerimeter() * price + "€");
+    System.out.println(shape);
   }
 }
