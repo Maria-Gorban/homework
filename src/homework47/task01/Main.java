@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
 
   public static void main(String[] args) {
-    // делаем массивы с данными
+
     String[] products = {"Яблоко", "Картошка", "Огурец", "Помидор", "Лук", "Виноград"};
     Double[] prices = {2.D, 1.5, 2.5, 3.D, 1.D, 3.5};
 
@@ -26,7 +26,6 @@ public class Main {
         break;
       }
     }
-
     if (index != -1) {
       System.out.println(goods[index].getPrice());
     } else {
