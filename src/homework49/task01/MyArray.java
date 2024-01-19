@@ -13,9 +13,11 @@ public class MyArray<E> implements Iterable<E> {
 
   // конструктор с параметрами
   public MyArray(E[] array) {
-    // инициализируем массив-поле массивом такой же длинны как и массив-параметр
+    if (array == null) {
+      throw new IllegalArgumentException("Array cannot be null");
+    }
+
     this.array = new Object[array.length];
-    // копируем все элементы из переданного массива в поле
     copy(array, this.array);
   }
 
@@ -25,25 +27,24 @@ public class MyArray<E> implements Iterable<E> {
   dst - destination - куда копировать
    */
   private void copy(Object[] src, Object[] dst) {
-    // итерируемся по всем элементам
+
     for (int i = 0; i < src.length; i++) {
-      // записываем в целевой массив элемент из исходного
       dst[i] = src[i];
     }
   }
 
   // метод для получения значения элемента по индексу
   public E get(int index) {
-    if(index < 0 || index > array.length){
-      throw new IndexOutOfBoundsException("You entered a wrong index!");
+    if (index < 0 || index > array.length) {
+      throw new IndexOutOfBoundsException("Index " + index + " out of bounds for length " + array.length);
     }
     return (E) array[index];
   }
 
   // метод для изменения значения элемента по индексу
   public void set(int index, E value) {
-    if(index < 0 || index > array.length){
-      throw new IndexOutOfBoundsException("You entered a wrong index!");
+    if (index < 0 || index > array.length) {
+      throw new IndexOutOfBoundsException("Index " + index + " out of bounds for length " + array.length);
     }
     array[index] = value;
   }
@@ -61,14 +62,14 @@ public class MyArray<E> implements Iterable<E> {
         return i;
       }
     }
-    throw new IllegalArgumentException("there is no such element in the collection");
+    return -1;
 
   }
 
   public void add(int index, E val) {
     // если индекс неправильный, ничего не делаем
     if (index < 0 || index > array.length) {
-      throw new IndexOutOfBoundsException ("You entered a wrong index!");
+      throw new IndexOutOfBoundsException("Index " + index + " out of bounds for length " + array.length);
     }
     // создаем новый массив на 1 больше чем был до этого
     Object[] newArray = new Object[array.length + 1];
@@ -92,7 +93,7 @@ public class MyArray<E> implements Iterable<E> {
   public void remove(int index) {
     // если индекс неправильный, ничего не делаем
     if (index < 0 || index >= array.length) {
-      throw new IndexOutOfBoundsException("You entered a wrong index!");
+      throw new IndexOutOfBoundsException("Index " + index + " out of bounds for length " + array.length);
     }
     // новый массив, на 1 меньше, так как удаляем элемент
     Object[] newArray = new Object[array.length - 1];
