@@ -8,6 +8,14 @@ public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     Random random = new Random();
+
+    System.out.println("Try to initialize an array with null elements:");
+    try {
+      MyArray<String> strings = new MyArray<>(null);
+    } catch (IllegalArgumentException e) {
+      System.out.println(e.getMessage());
+    }
+
     MyArray<Integer> numbers = new MyArray<>();
     int i = 0;
 
@@ -16,30 +24,25 @@ public class Main {
       numbers.add(d);
       i++;
     }
+    System.out.print("An integer array: ");
     for (Integer d : numbers) {
       System.out.print(d + " ");
     }
 
     try {
-      System.out.println("\nTry to find an element with a negative index");
+      System.out.println("\nTry to find an element with a negative index:");
       numbers.get(-8);
     } catch (IndexOutOfBoundsException ex) {
       System.out.println(ex.getMessage());
     }
 
     try {
-      System.out.println("Try to add an element with a wrong index");
+      System.out.println("Try to add an element with a wrong index:");
       numbers.add(56, 56);
     } catch (IndexOutOfBoundsException ex) {
       System.out.println(ex.getMessage());
 
     }
-    try {
-      System.out.print("Enter a number to find out its index: ");
-      int n = scanner.nextInt();
-      System.out.println(numbers.indexOf(n));
-    } catch (IllegalArgumentException ex) {
-      System.out.println(ex.getMessage());
-    }
   }
 }
+
