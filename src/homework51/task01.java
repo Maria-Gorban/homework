@@ -162,15 +162,17 @@ public class task01 {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
-    System.out.println(Arrays.toString(parseIp("123.6.89.222")));
+
     System.out.println("Enter your text for isPalindrome: ");
     System.out.println(isPalindrome(scanner.nextLine()));
 
     System.out.println("Enter your text for isPangram: ");
     System.out.println(isPangram(scanner.nextLine()));
 
+    System.out.println(Arrays.toString(parseIp("123.6.89.222")));
 
     System.out.println(encrypt("Hello World"));
+    System.out.println(decrypt("khoor#zruog"));
 
     System.out.println(countOccurencies("one two three four five", 'z'));
 
