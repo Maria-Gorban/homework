@@ -169,7 +169,7 @@ public class task01 {
     System.out.println("Enter your text for isPangram: ");
     System.out.println(isPangram(scanner.nextLine()));
 
-    System.out.println(Arrays.toString(parseIp("123.6.89.222")));
+    System.out.println(Arrays.toString(parseIp("hello")));
 
     System.out.println(encrypt("Hello World"));
     System.out.println(decrypt("khoor#zruog"));
