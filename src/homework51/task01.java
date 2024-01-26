@@ -1,12 +1,14 @@
 package homework51;
 
+import java.util.Arrays;
 import java.util.Scanner;
+
 import static java.lang.Character.toUpperCase;
 
 public class task01 {
 
 
-  public static boolean isPalindrome(String word) {
+  public static boolean isPalindromeIgnoresSpaces(String word) {
 
     char[] signs = {',', '.', ';', ':', '!', '?', '-'};
 
@@ -28,12 +30,10 @@ public class task01 {
     return true;
   }
 
-  /*
   public static boolean isPalindrome(String word) {
-  word = word.toLowerCase().replace("[^a-z]", "");
-  return reverse(word).equals(word);
+    word = word.toLowerCase().replace("[^a-z]", "");
+    return reverse(word).equals(word);
   }
-   */
 
   public static boolean isPangram(String sentence) {
     sentence = sentence.replaceAll("\\s", "");
@@ -94,8 +94,6 @@ public class task01 {
 
 
   public static String encrypt(String text) {
-
-    text = text.toLowerCase();
     StringBuilder enText = new StringBuilder();
 
     for (char ch : text.toCharArray()) {
@@ -107,6 +105,7 @@ public class task01 {
 
   public static String decrypt(String data) {
     StringBuilder sb = new StringBuilder();
+
     for (char ch : data.toCharArray()) {
       sb.append((char) (ch - 3));
     }
@@ -114,6 +113,7 @@ public class task01 {
   }
 
   public static int countOccurencies(String text, char letter) {
+    text = text.toLowerCase();
     if (text == null || text.isEmpty()) {
       return 0;
     }
@@ -157,16 +157,23 @@ public class task01 {
     return sb.toString();
   }
 
+
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
+
+
     System.out.println("Enter your text for isPalindrome: ");
     System.out.println(isPalindrome(scanner.nextLine()));
 
     System.out.println("Enter your text for isPangram: ");
     System.out.println(isPangram(scanner.nextLine()));
 
-    System.out.println("Enter your text to encrypt it: ");
-    System.out.println(encrypt(scanner.nextLine()));
+    System.out.println(Arrays.toString(parseIp("hello")));
+
+    System.out.println(encrypt("Hello World"));
+    System.out.println(decrypt("khoor#zruog"));
+
+    System.out.println(countOccurencies("one two three four five", 'z'));
 
 
   }
