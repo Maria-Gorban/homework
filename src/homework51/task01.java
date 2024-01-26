@@ -94,8 +94,6 @@ public class task01 {
 
 
   public static String encrypt(String text) {
-
-    text = text.toLowerCase();
     StringBuilder enText = new StringBuilder();
 
     for (char ch : text.toCharArray()) {
@@ -107,6 +105,7 @@ public class task01 {
 
   public static String decrypt(String data) {
     StringBuilder sb = new StringBuilder();
+
     for (char ch : data.toCharArray()) {
       sb.append((char) (ch - 3));
     }

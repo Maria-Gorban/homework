@@ -14,36 +14,36 @@ public class Homework51Test {
   @Test
   void isPalindromeReturnsTrue() {
     boolean actual = task01.isPalindrome("tenet");
-    boolean expected = true;
-    assertEquals(expected, actual);
+
+    assertTrue(actual);
   }
 
   @Test
   void isPalindromeReturnsFalse(){
     boolean actual = task01.isPalindrome("tenets");
-    boolean expected = false;
-    assertEquals(expected, actual);
+
+    assertFalse(actual);
   }
   @Test
   void isPalindromeIgnoresSpacesWorks() {
     boolean actual = task01.isPalindromeIgnoresSpaces("А роза упала на лапу Азора");
-    boolean expected = true;
-    assertEquals(expected, actual);
+
+    assertTrue(actual);
   }
 
 
   @Test
   void isPangramReturnsTrue() {
     boolean actual = task01.isPangram("A bC DEFG hijklmn OpQr stUVW xYz");
-    boolean expected = true;
-    assertEquals(expected, actual);
+
+    assertTrue(actual);
   }
 
   @Test
   void isPangramReturnsFalse() {
     boolean actual = task01.isPangram("Luke, i am your father");
-    boolean expected = false;
-    assertEquals(expected, actual);
+
+    assertFalse(actual);
   }
 
   @Test
@@ -97,7 +97,7 @@ public class Homework51Test {
   @Test
   void encryptWorks() {
     String actual = task01.encrypt("Hello World 6");
-    String expected = "khoor#zruog#9";
+    String expected = "Khoor#Zruog#9";
 
     assertEquals(expected, actual);
   }
@@ -133,18 +133,16 @@ public class Homework51Test {
   @Test
   void isEmailReturnsTrue(){
     boolean actual = task01.isEmail("maria.gorban.2001@gmail.com");
-    boolean expected = true;
 
-    assertEquals(expected,actual);
+    assertTrue(actual);
   }
 
 
   @Test
   void isEmailReturnsFalse(){
     boolean actual = task01.isEmail("maria.gorban.2001@@gmail..com");
-    boolean expected = false;
 
-    assertEquals(expected,actual);
+    assertFalse(actual);
   }
 
   @Test
