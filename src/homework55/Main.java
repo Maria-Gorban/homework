@@ -5,7 +5,8 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-   public static void main(String[] args) {
+
+  public static void main(String[] args) {
     Map<String, Integer> toDos = new HashMap<>();
     Scanner scanner = new Scanner(System.in);
 
@@ -21,7 +22,7 @@ public class Main {
       System.out.print("Время: ");
       int time = scanner.nextInt();
       scanner.nextLine();
-      toDos.put(task,time);
+      toDos.put(task, time);
       sum++;
       minSum += time;
 
@@ -31,7 +32,8 @@ public class Main {
     for (String key : toDos.keySet()) {
       System.out.println("- " + key + " (" + toDos.get(key) + " мин)");
     }
-    System.out.println("На это все уйдет " + String.format("%d ч. %02d мин.",(minSum / 60), (minSum % 60)));
+    System.out.println(
+        "На это все уйдет " + String.format("%d ч. %02d мин.", (minSum / 60), (minSum % 60)));
 
   }
 }
