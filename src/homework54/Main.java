@@ -49,8 +49,6 @@ public class Main {
       //System.out.println(playlist.getSong(5)); чисто ради проверки того, что в самом плейлисте не меняется порядок песен
     }while(userChoice != 0);
 
-
-
     }
   }
 
