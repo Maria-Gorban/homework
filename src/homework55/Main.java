@@ -35,11 +35,3 @@ public class Main {
 
   }
 }
-/*
-@Override
-  public String toString() {
-    return String.format(singer  +
-        " - " + name +
-        " (%d:%02d)", (duration / 60),(duration % 60));
-  }
- */
