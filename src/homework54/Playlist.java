@@ -1,13 +1,12 @@
 package homework54;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Random;
 import java.util.Stack;
-import java.util.Set;
+
 
 public class Playlist {
 
@@ -42,31 +41,34 @@ public class Playlist {
 
   public Queue<Song> getReverseListeningQueue() {
     Queue<Song> queue = new LinkedList<>();
-    Stack<Song> stack = new Stack<>();
 
-    for (Song song : songs) {
-      stack.push(song); //добавляем песни в стек
-    }
-    while (!stack.isEmpty()) {
-      queue.add(stack.pop()); //добавляем песни в очередь из получая поочереди элементы из стека
+    for (int i = songs.size()-1; i >= 0; i--) { //Добавляем песни в очередь с конца
+      queue.add(songs.get(i));
     }
     return queue;
   }
+
 
   public Queue<Song> getShuffledListeningQueue() {
-    Queue<Song> queue = new LinkedList<>();
-    Set<Song> set = new HashSet<>(); //порядок не будет соответствовать хронологическому порядку добавления
+    List<Song> shuffledSongs = new ArrayList<>(songs);
+    Random random = new Random();
 
-    for (Song song : songs) {
-      set.add(song);
+    for (int i = shuffledSongs.size() - 1; i > 0 ; i--) {
+      Song temp = shuffledSongs.get(i); //копируем песню, чтобы не изменить изначальный порядок
+      int j = random.nextInt(i); //случайный индекс от 0 до i
+      shuffledSongs.set(i, shuffledSongs.get(j));
+      shuffledSongs.set(j, temp);
     }
 
-    Iterator<Song> iterator = set.iterator();
-    while (iterator.hasNext()) {
-      Song element = iterator.next();
-      queue.add(element); //добавляем элементы в очередь
-
-    }
-    return queue;
+    return new LinkedList<>(shuffledSongs);
   }
 }
+/*
+Используем ArrayList в методе getShuffledListeningQueue,
+так как он более эффективен для получения элемента по индексу
+
+В LinkedList элементы находятся в связанной структуре,
+и для доступа к элементу по индексу
+нужно пройтись по всем элементам от начала до нужного элемента.
+Это требует больше времени.
+ */
